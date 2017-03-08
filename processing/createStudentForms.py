@@ -2,7 +2,8 @@ import sys
 import readFromFile
 
 """
-按照学生 id 进行特征统计
+没有用 pandas 有点伤
+按照学生 id 进行特征统计，所有相同学生的记录合并到一个 stuId 中
 """
 def invertForm(filePath):
     students = {}

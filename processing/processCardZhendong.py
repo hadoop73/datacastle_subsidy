@@ -16,6 +16,12 @@ else:
     #print "Invalid arguments"
     print("invalid arguments")
 
+"""
+    学生id，消费类别，消费地点，消费方式，消费时间，消费金额，剩余金额
+    1006,"POS消费","地点551","淋浴","2013/09/01 00:00:32","0.5","124.9"
+    1406,"POS消费","地点78","其他","2013/09/01 00:00:40","0.6","373.82"
+"""
+
 # translate Chinese to English
 def type_mapping(chinese):
     if chinese == "图书馆":

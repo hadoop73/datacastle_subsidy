@@ -17,6 +17,11 @@ else:
     print 'Invalid arguments'
 
 """
+    注：有些图书的编号缺失。字段描述和示例如下（第三条记录缺失图书编号）：
+    学生id，借阅日期，图书名称，图书编号
+    9708,2014/2/25,"我的英语日记/ (韩)南银英著 (韩)卢炫廷插图","H315 502"
+    6956,2013/10/27,"解读联想思维: 联想教父柳传志","K825.38=76 547"
+
 统计是否结果书，是否借过考研书，是否借过编程书，是否借过托福书
 统计这些类别书的数量，还统计了不同种类书的数目
 """
@@ -24,11 +29,13 @@ for line in lines:
     features = {"stuId":-1, "ifBorrowed":0, "numOfBorrowed":0, 
             "timesOfTOEFL":0, "timesOfKaoyan":0, "timesOfProg":0, "numOfCateBorrowed":0}
     # Add category A-Z number counters to dic features
+    # 用于统计书的类别
     for i in list(string.ascii_uppercase):
         if i == 'T' and i != 'L' and i != 'M' and i != 'W' and i != 'Y':
             features["numInCate" + i] = 0
     books = line.split('$')
     features['stuId'] = int(books[0])
+    # 统计是否借书，借书的数量，考研，托福，编程，数类别的数量
     if len(books) > 1:
         features['ifBorrowed'] =  1 
         features['numOfBorrowed'] = len(books) - 1
@@ -59,6 +66,7 @@ for line in lines:
                     break
             
         # Count the number of distinct categories this person has borrowed.
+        # 统计不同种类书的数目
         for i in list(string.ascii_uppercase):
             if i == 'T' and i != 'L' and i != 'M' and i != 'W' and i != 'Y':
                 features['numOfCateBorrowed'] += 0 if features['numInCate' + i] == 0 else 1 

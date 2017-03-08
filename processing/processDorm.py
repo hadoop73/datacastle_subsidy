@@ -15,6 +15,12 @@ else:
     print "Invalid arguments"
 print lines[0]
 
+"""
+    学生id，具体时间，进出方向(0进寝室，1出寝室)
+    13126,"2014/01/21 03:31:11","1"
+    9228,"2014/01/21 10:28:23","0"
+"""
+
 students_earest = {}
 students_lastest = {}
 # see rank:
@@ -41,6 +47,7 @@ for line in lines:
             # items = [ '"2013/12/04 17:50:51"', '"1"' ]
             if len(items) != 2:
                 print "Error in split one record into items. wrong number of items in record."
+            # 去除双引号
             items[0] = items[0][1:-1]
             items[1] = items[1][1:-1]
             date = items[0].split(' ')[0]
@@ -112,6 +119,7 @@ for line in lines:
                     
 fw = open(sys.argv[1] + 'Processed/DormProcessed.txt', 'w')
 #count = 0
+# 统计 10 个时间段的进出次数
 for line in lines:
     '''
         Features:

@@ -1,6 +1,9 @@
 import sys
 import readFromFile
 
+"""
+按照学生 id 进行特征统计
+"""
 def invertForm(filePath):
     students = {}
     lines = readFromFile.readLines(filePath)

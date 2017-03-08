@@ -47,6 +47,9 @@ nian = ['2013/01/09', '2014/01/31', '2015/02/19', '2016/02/08']
 _slice = [0, 2.5, 5.0, 10.0, 15.0, 20.0, 30.0, 50.0, float('inf')]
 _slice2 = [0, 10, 20, 30, 40, 50]
 type_list = ["图书馆", "", "校医院", "超市", "开水", "食堂", "洗衣房", "其他", "教务处", "文印中心", "校车", "淋浴"]
+"""
+进行一个汉字类别道英文的转换
+"""
 for i in range(len(type_list)):
     type_list[i] = type_mapping(type_list[i])
 lines = open(root_loc).readlines()

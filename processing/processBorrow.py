@@ -16,6 +16,10 @@ elif sys.argv[1] == 'test':
 else:
     print 'Invalid arguments'
 
+"""
+统计是否结果书，是否借过考研书，是否借过编程书，是否借过托福书
+统计这些类别书的数量，还统计了不同种类书的数目
+"""
 for line in lines:
     features = {"stuId":-1, "ifBorrowed":0, "numOfBorrowed":0, 
             "timesOfTOEFL":0, "timesOfKaoyan":0, "timesOfProg":0, "numOfCateBorrowed":0}
